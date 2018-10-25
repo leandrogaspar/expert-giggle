@@ -1,5 +1,5 @@
 # Python Test
-> Simple Python application usin MongoDB
+> Simple Python application using MongoDB
 
 You can find the API doc [here](https://documenter.getpostman.com/view/4045821/RWgxtuNV)
 
