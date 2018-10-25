@@ -1,4 +1,4 @@
-from pymongo import MongoClient
+from pymongo import MongoClient, DESCENDING, ASCENDING
 from datetime import datetime
 
 client = MongoClient('localhost', 27017)
@@ -20,5 +20,10 @@ for estudante in db.estudantes.find():
     db.estudantes.save(student)
 
     converted += 1
-
 print('Done converting. Converted documents: ', converted)
+
+print('Creating index data_inicio to mongodb date')
+#https://docs.mongodb.com/manual/tutorial/sort-results-with-indexes/
+db.estudantes.create_index([("modalidade", ASCENDING), ("data_inicio", DESCENDING)])
+
+db.estudantes.create_index([("campus", ASCENDING), ("curso", ASCENDING), ("data_inicio", DESCENDING)])
