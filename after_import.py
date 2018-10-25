@@ -17,7 +17,7 @@ for estudante in db.estudantes.find():
         continue
 
     estudante['data_inicio'] = datetime.strptime(estudante['data_inicio'], '%Y-%m-%d')
-    db.estudantes.save(student)
+    db.estudantes.save(estudante)
 
     converted += 1
 print('Done converting. Converted documents: ', converted)
